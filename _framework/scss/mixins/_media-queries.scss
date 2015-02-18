@@ -1,0 +1,54 @@
+// ========================================================================
+//    Title:  Font face
+//    Type:   Mixin
+//    Credit: https://github.com/paranoida/sass-mediaqueries/blob/master/_media-queries.scss
+//            https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_hidpi-media-query.scss                
+// ========================================================================
+
+@mixin mq($resMin, $resMax)
+{
+    @media screen and (min-width: $resMin) and (max-width: $resMax)
+    {
+        @content;
+    }
+}
+
+@mixin mq-max($res)
+{
+    @media screen and (max-width: $res)
+    {
+        @content;
+    }
+}
+
+@mixin mq-min($res)
+{
+    @media screen and (min-width: $res)
+    {
+        @content;
+    }
+}
+
+@mixin mq-height($resMin, $resMax)
+{
+    @media screen and (min-height: $resMin) and (max-height: $resMax)
+    {
+        @content;
+    }
+}
+
+@mixin mq-height-max($res)
+{
+    @media screen and (max-height: $res)
+    {
+        @content;
+    }
+}
+
+@mixin mq-height-min($res)
+{
+    @media screen and (min-height: $res)
+    {
+        @content;
+    }
+}

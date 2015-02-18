@@ -1,0 +1,19 @@
+// ========================================================================
+//    Title:  Image replacement
+//    Type:   Mixin
+//    Credit: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+// ========================================================================
+
+@mixin image-replace($width, $height, $background-image, $display: inline-block) {
+    background: url(unquote($background-image)) no-repeat 50% 50%;
+    background-size: contain;
+    border: 0;
+    color: transparent;
+    display: $display;
+    font: 0/0 a;
+    height: $height;
+    text-shadow: none;
+    user-select: none;
+    vertical-align: top;
+    width: $width;
+}

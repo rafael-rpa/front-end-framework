@@ -1,0 +1,54 @@
+// ========================================================================
+//    Title:  Base
+//    Type:   Layout
+// ========================================================================
+
+html {
+    color: $cod-gray;
+    font-family: $arial;
+    font-size: $base-font-size;
+    height: 100%;
+
+    ::selection {
+
+    }
+
+    ::-moz-selection {
+
+    }
+}
+
+
+body {
+    background: $white;
+    min-height: 100%;
+    line-height: $base-line-height;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    @extend %transitions;
+
+    &:hover {
+
+    }
+
+    &:focus {
+
+    }
+
+    &:active {
+
+    }
+
+    &:visited {
+
+    }
+}

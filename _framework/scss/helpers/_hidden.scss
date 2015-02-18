@@ -1,0 +1,14 @@
+// ========================================================================
+//    Title:  Hidden
+//    Type:   Helper
+//    Credit: http://juicystudio.com/article/screen-readers-display-none.php
+// ========================================================================
+
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+%hidden {
+    @include hidden;
+}

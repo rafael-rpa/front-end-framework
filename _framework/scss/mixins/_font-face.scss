@@ -1,0 +1,20 @@
+// ========================================================================
+//    Title:  Font face
+//    Type:   Mixin
+//    Credit: http://bourbon.io/docs/#font-face
+// ========================================================================
+
+@mixin font-face($family, $file, $weight: normal, $style: normal, $stretch: normal) {
+    @font-face {
+        font-family:  $family;
+        font-weight:  $weight;
+        font-style:   $style;
+        font-stretch: $stretch;
+
+        src: url("#{$file}.eot");
+        src: url("#{$file}.eot#iefix") format("embedded-opentype"),
+             url("#{$file}.woff") format("woff"),
+             url("#{$file}.ttf") format("truetype"),
+             url("#{$file}.svg##{$family}") format("svg");
+    }
+}

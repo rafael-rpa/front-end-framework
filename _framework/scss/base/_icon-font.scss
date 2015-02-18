@@ -1,0 +1,38 @@
+// ========================================================================
+//    Title:  Icon font
+//    Type:   Base
+// ========================================================================
+
+// Embed icon font
+// @include font-face("Icons", "../fonts/icons");
+
+// Placeholders for `icon()` mixin
+%icon-font {
+    font-family: "Icons";
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%icon- { content: "\e600"; }
+%icon- { content: "\e601"; }
+%icon- { content: "\e602"; }
+%icon- { content: "\e603"; }
+%icon- { content: "\e604"; }
+%icon- { content: "\e605"; }
+%icon- { content: "\e606"; }
+%icon- { content: "\e607"; }
+%icon- { content: "\e608"; }
+%icon- { content: "\e609"; }
+%icon- { content: "\e60a"; }
+%icon- { content: "\e60b"; }
+%icon- { content: "\e60c"; }
+%icon- { content: "\e60d"; }
+%icon- { content: "\e60e"; }
+%icon- { content: "\e60f"; }

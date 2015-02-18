@@ -1,0 +1,59 @@
+# ============================================================================
+#    Front-End Framework
+# ============================================================================
+
+# --- Grunt/Node installed modules
+_framework/grunt/*
+!_framework/grunt/Gruntfile.js
+!_framework/grunt/package.json
+
+# --- Sass file caches
+.sass-cache/
+
+# ============================================================================
+#    Python/Django and WordPress
+# ============================================================================
+
+# --- Python compiled files
+*.pyc
+
+# --- Django settings file
+settings.py
+wsgi.py
+
+# --- WordPress settings file
+wp-config.php
+
+# ============================================================================
+#    Global Ignore (delete if you already have your global ignore file set)
+# ============================================================================
+
+# --- Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# --- Windows folder config file
+Desktop.ini
+
+# --- Windows recycle bin used on file shares
+$RECYCLE.BIN/
+
+# --- Windows installer files
+*.cab
+*.msi
+*.msm
+*.msp
+*.dll
+
+# --- Windows shortcuts
+*.lnk
+
+# --- OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- OSX directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+.apdisk

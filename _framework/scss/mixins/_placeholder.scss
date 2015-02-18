@@ -1,0 +1,14 @@
+// ========================================================================
+//    Title:  Placeholder
+//    Type:   Mixin
+//    Credit: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_placeholder.scss
+// ========================================================================
+
+@mixin placeholder {
+	$placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+	@each $placeholder in $placeholders {
+		&:#{$placeholder}-placeholder {
+			@content;
+		}
+	}
+}

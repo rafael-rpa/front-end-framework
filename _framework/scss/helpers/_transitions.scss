@@ -1,0 +1,22 @@
+// ========================================================================
+//    Title:  Transitions
+//    Type:   Helper
+//    Credit: http://www.w3.org/TR/css3-transitions/#animatable-properties
+// ========================================================================
+
+@mixin transitions {
+    transition-duration: 0.25s;
+    transition-property:
+        background-color,
+        background-image,
+        border-color,
+        box-shadow,
+        color,
+        opacity,
+        text-shadow;
+    transition-timing-function: ease-out;
+}
+
+%transitions {
+    @include transitions;
+}

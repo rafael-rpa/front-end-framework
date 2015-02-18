@@ -1,0 +1,157 @@
+// ========================================================================
+//    Title:  Element-specific CSS reset
+//    Type:   Mixin
+//    Credit: https://github.com/peteboere/css-crush/blob/master/misc/initial-values.ini
+// ========================================================================
+
+@mixin reset($values...) {
+    @each $value in $values {
+        @if      $value == animation                  { animation: none; }
+        @else if $value == animation-delay            { animation-delay: 0; }
+        @else if $value == animation-direction        { animation-direction: normal; }
+        @else if $value == animation-duration         { animation-duration: 0; }
+        @else if $value == animation-fill-mode        { animation-fill-mode: none; }
+        @else if $value == animation-iteration-count  { animation-iteration-count: 1; }
+        @else if $value == animation-name             { animation-name: none; }
+        @else if $value == animation-play-state       { animation-play-state: running; }
+        @else if $value == animation-timing-function  { animation-timing-function: ease; }
+        @else if $value == backface-visibility        { backface-visibility: visible; }
+        @else if $value == background                 { background: 0; }
+        @else if $value == background-attachment      { background-attachment: scroll; }
+        @else if $value == background-clip            { background-clip: border-box; }
+        @else if $value == background-color           { background-color: transparent; }
+        @else if $value == background-image           { background-image: none; }
+        @else if $value == background-origin          { background-origin: padding-box; }
+        @else if $value == background-position        { background-position: 0 0; }
+        @else if $value == background-position-x      { background-position-x: 0; }
+        @else if $value == background-position-y      { background-position-y: 0; }
+        @else if $value == background-repeat          { background-repeat: repeat; }
+        @else if $value == background-size            { background-size: auto auto; }
+        @else if $value == border                     { border: 0; }
+        @else if $value == border-style               { border-style: none; }
+        @else if $value == border-width               { border-width: medium; }
+        @else if $value == border-color               { border-color: inherit; }
+        @else if $value == border-bottom              { border-bottom: 0; }
+        @else if $value == border-bottom-color        { border-bottom-color: inherit; }
+        @else if $value == border-bottom-left-radius  { border-bottom-left-radius: 0; }
+        @else if $value == border-bottom-right-radius { border-bottom-right-radius: 0; }
+        @else if $value == border-bottom-style        { border-bottom-style: none; }
+        @else if $value == border-bottom-width        { border-bottom-width: medium; }
+        @else if $value == border-collapse            { border-collapse: separate; }
+        @else if $value == border-image               { border-image: none; }
+        @else if $value == border-left                { border-left: 0; }
+        @else if $value == border-left-color          { border-left-color: inherit; }
+        @else if $value == border-left-style          { border-left-style: none; }
+        @else if $value == border-left-width          { border-left-width: medium; }
+        @else if $value == border-radius              { border-radius: 0; }
+        @else if $value == border-right               { border-right: 0; }
+        @else if $value == border-right-color         { border-right-color: inherit; }
+        @else if $value == border-right-style         { border-right-style: none; }
+        @else if $value == border-right-width         { border-right-width: medium; }
+        @else if $value == border-spacing             { border-spacing: 0; }
+        @else if $value == border-top                 { border-top: 0; }
+        @else if $value == border-top-color           { border-top-color: inherit; }
+        @else if $value == border-top-left-radius     { border-top-left-radius: 0; }
+        @else if $value == border-top-right-radius    { border-top-right-radius: 0; }
+        @else if $value == border-top-style           { border-top-style: none; }
+        @else if $value == border-top-width           { border-top-width: medium; }
+        @else if $value == bottom                     { bottom: auto; }
+        @else if $value == box-shadow                 { box-shadow: none; }
+        @else if $value == box-sizing                 { box-sizing: content-box; }
+        @else if $value == caption-side               { caption-side: top; }
+        @else if $value == clear                      { clear: none; }
+        @else if $value == clip                       { clip: auto; }
+        @else if $value == color                      { color: inherit; }
+        @else if $value == columns                    { columns: auto; }
+        @else if $value == column-count               { column-count: auto; }
+        @else if $value == column-fill                { column-fill: balance; }
+        @else if $value == column-gap                 { column-gap: normal; }
+        @else if $value == column-rule                { column-rule: medium none currentColor; }
+        @else if $value == column-rule-color          { column-rule-color: currentColor; }
+        @else if $value == column-rule-style          { column-rule-style: none; }
+        @else if $value == column-rule-width          { column-rule-width: none; }
+        @else if $value == column-span                { column-span: 1; }
+        @else if $value == column-width               { column-width: auto; }
+        @else if $value == content                    { content: normal; }
+        @else if $value == counter-increment          { counter-increment: none; }
+        @else if $value == counter-reset              { counter-reset: none; }
+        @else if $value == cursor                     { cursor: auto; }
+        @else if $value == direction                  { direction: ltr; }
+        @else if $value == display                    { display: inline; }
+        @else if $value == empty-cells                { empty-cells: show; }
+        @else if $value == float                      { float: none; }
+        @else if $value == font                       { font: normal; }
+        @else if $value == font-family                { font-family: inherit; }
+        @else if $value == font-size                  { font-size: medium; }
+        @else if $value == font-style                 { font-style: normal; }
+        @else if $value == font-variant               { font-variant: normal; }
+        @else if $value == font-weight                { font-weight: normal; }
+        @else if $value == height                     { height: auto; }
+        @else if $value == hyphens                    { hyphens: none; }
+        @else if $value == left                       { left: auto; }
+        @else if $value == letter-spacing             { letter-spacing: normal; }
+        @else if $value == line-height                { line-height: normal; }
+        @else if $value == list-style                 { list-style: none; }
+        @else if $value == list-style-image           { list-style-image: none; }
+        @else if $value == list-style-position        { list-style-position: outside; }
+        @else if $value == list-style-type            { list-style-type: disc; }
+        @else if $value == margin                     { margin: 0; }
+        @else if $value == margin-bottom              { margin-bottom: 0; }
+        @else if $value == margin-left                { margin-left: 0; }
+        @else if $value == margin-right               { margin-right: 0; }
+        @else if $value == margin-top                 { margin-top: 0; }
+        @else if $value == max-height                 { max-height: none; }
+        @else if $value == max-width                  { max-width: none; }
+        @else if $value == min-height                 { min-height: 0; }
+        @else if $value == min-width                  { min-width: 0; }
+        @else if $value == opacity                    { opacity: 1; }
+        @else if $value == orphans                    { orphans: 0; }
+        @else if $value == outline                    { outline: 0; }
+        @else if $value == outline-color              { outline-color: invert; }
+        @else if $value == outline-style              { outline-style: none; }
+        @else if $value == outline-width              { outline-width: medium; }
+        @else if $value == overflow                   { overflow: visible; }
+        @else if $value == overflow-x                 { overflow-x: visible; }
+        @else if $value == overflow-y                 { overflow-y: visible; }
+        @else if $value == padding                    { padding: 0; }
+        @else if $value == padding-bottom             { padding-bottom: 0; }
+        @else if $value == padding-left               { padding-left: 0; }
+        @else if $value == padding-right              { padding-right: 0; }
+        @else if $value == padding-top                { padding-top: 0; }
+        @else if $value == page-break-after           { page-break-after: auto; }
+        @else if $value == page-break-before          { page-break-before: auto; }
+        @else if $value == page-break-inside          { page-break-inside: auto; }
+        @else if $value == perspective                { perspective: none; }
+        @else if $value == perspective-origin         { perspective-origin: 50% 50%; }
+        @else if $value == position                   { position: static; }
+        @else if $value == quotes                     { quotes: '\201C' '\201D' '\2018' '\2019'; }
+        @else if $value == right                      { right: auto; }
+        @else if $value == tab-size                   { tab-size: 8; }
+        @else if $value == table-layout               { table-layout: auto; }
+        @else if $value == text-align                 { text-align: inherit; }
+        @else if $value == text-align-last            { text-align-last: auto; }
+        @else if $value == text-decoration            { text-decoration: none; }
+        @else if $value == text-decoration-color      { text-decoration-color: inherit; }
+        @else if $value == text-decoration-line       { text-decoration-line: none; }
+        @else if $value == text-decoration-style      { text-decoration-style: solid; }
+        @else if $value == text-indent                { text-indent: 0; }
+        @else if $value == text-shadow                { text-shadow: none; }
+        @else if $value == text-transform             { text-transform: none; }
+        @else if $value == top                        { top: auto; }
+        @else if $value == transform                  { transform: none; }
+        @else if $value == transform-style            { transform-style: flat; }
+        @else if $value == transition                 { transition: none; }
+        @else if $value == transition-delay           { transition-delay: 0s; }
+        @else if $value == transition-duration        { transition-duration: 0s; }
+        @else if $value == transition-property        { transition-property: none; }
+        @else if $value == transition-timing-function { transition-timing-function: ease; }
+        @else if $value == unicode-bidi               { unicode-bidi: normal; }
+        @else if $value == vertical-align             { vertical-align: baseline; }
+        @else if $value == visibility                 { visibility: visible; }
+        @else if $value == white-space                { white-space: normal; }
+        @else if $value == widows                     { widows: 0; }
+        @else if $value == width                      { width: auto; }
+        @else if $value == word-spacing               { word-spacing: normal; }
+        @else if $value == z-index                    { z-index: auto; }
+    }
+}

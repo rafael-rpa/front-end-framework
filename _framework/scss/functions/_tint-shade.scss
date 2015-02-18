@@ -1,0 +1,16 @@
+// ========================================================================
+//    Title:  Tint/Shade
+//    Type:   Function
+//    Credit: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_tint.scss
+//            https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_shade.scss
+//    Ex.:    background-color: tint(#6ecaa6, 40%);
+//            background-color: shade(#ffbb52, 60%);
+// ========================================================================
+
+@function tint($color, $percent) {
+    @return mix(#fff, $color, $percent);
+}
+
+@function shade($color, $percent) {
+    @return mix(#000, $color, $percent);
+}
