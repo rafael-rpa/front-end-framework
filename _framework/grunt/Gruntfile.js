@@ -58,6 +58,17 @@ module.exports = function(grunt) {
             }
         },
 
+        autoprefixer: {
+            single_file: {
+                options: {
+                    map: true,
+                    // remove: false,
+                    browsers: ['> 1%', 'last 3 versions', 'ie 9']
+                },
+                src: '../../static/css/style.css'
+            }
+        },
+
         watch: {
             html: {
                 files: ['../kit/**/*.kit'],
@@ -65,7 +76,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['../scss/**/*.scss'],
-                tasks: ['sass','cssmin']
+                tasks: ['sass','cssmin','autoprefixer']
             },
             js:{
                 files: ['../js/**/*.js'],
@@ -75,6 +86,6 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['watch','sass','codekit','cssmin','uglify']);
+    grunt.registerTask('default', ['watch','sass','codekit','cssmin','uglify','autoprefixer']);
 
 };
