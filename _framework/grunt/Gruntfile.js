@@ -40,10 +40,22 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '../../static/css',
-                    src: ['*.css', '!*.min.css'],
+                    src: ['**/*.css', '!**/*.min.css'],
                     dest: '../../static/css',
                     ext: '.min.css'
                 }]
+            }
+        },
+
+        concat: {
+            target: {
+                options: {
+                    separator: ';'
+                },
+                files: {
+                    // '../../static/js/main.js': ['../js/helpers.js','../js/main.js']
+                    '../../static/js/main.js': ['../js/main.js']
+                }
             }
         },
 
@@ -53,7 +65,7 @@ module.exports = function(grunt) {
                 //     mangle: false
                 // },
                 files: {
-                    '../../static/js/main.min.js': ['../js/main.js']
+                    '../../static/js/main.min.js': ['../../static/js/main.js']
                 }
             }
         },
@@ -97,16 +109,20 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['../scss/**/*.scss'],
-                tasks: ['sass','cssmin','autoprefixer']
+                tasks: ['sass','autoprefixer','cssmin']
             },
             js:{
                 files: ['../js/**/*.js'],
-                tasks: ['uglify']
+                tasks: ['concat','uglify']
+            },
+            svg:{
+                files: ['../../_assets/svg/original/**/*.svg'],
+                tasks: ['svgmin']
             }
         }
 
     });
 
-    grunt.registerTask('default', ['watch','sass','codekit','cssmin','uglify','autoprefixer','svgmin']);
+    grunt.registerTask('default', ['watch','sass','autoprefixer','cssmin','concat','uglify','codekit','svgmin']);
 
 };
