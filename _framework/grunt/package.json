@@ -12,7 +12,8 @@
     "grunt-contrib-qunit": "~0.5.2",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-svgmin": "^2.0.1"
   },
   "dependencies": {
     "matchdep": "^0.3.0"

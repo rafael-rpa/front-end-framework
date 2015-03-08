@@ -69,6 +69,27 @@ module.exports = function(grunt) {
             }
         },
 
+        svgmin: {
+            options: {
+                plugins: [
+                    {
+                        removeViewBox: false
+                    },
+                    {
+                        removeUselessStrokeAndFill: false
+                    }
+                ]
+            },
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: '../../_assets/svg/original',
+                    src: ['**/*.svg'],
+                    dest: '../../_assets/svg/compressed'
+                }]
+            }
+        },
+
         watch: {
             html: {
                 files: ['../kit/**/*.kit'],
@@ -86,6 +107,6 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['watch','sass','codekit','cssmin','uglify','autoprefixer']);
+    grunt.registerTask('default', ['watch','sass','codekit','cssmin','uglify','autoprefixer','svgmin']);
 
 };
