@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                     separator: ';'
                 },
                 files: {
-                    // '../../static/js/main.js': ['../js/helpers.js','../js/main.js']
+                    // '../../static/js/main.js': ['../js/helper/util.js','../js/main.js']
                     '../../static/js/main.js': ['../js/main.js']
                 }
             }

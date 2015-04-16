@@ -1,20 +1,16 @@
-// Main functions
 (function($) {
 
-    // Settings namespace
     var settings = {
         settingA: true,
-        settingB: false,
+        settingB: 123,
         settingC: "test"
     }
 
     var Main = {
-        // Init Main
         init: function() {
             Main.myFunction();
         },
 
-        // myFunction
         myFunction: function() {
 
         }
