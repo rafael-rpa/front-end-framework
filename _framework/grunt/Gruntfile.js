@@ -71,10 +71,10 @@ module.exports = function(grunt) {
         },
 
         autoprefixer: {
-            single_file: {
+            target: {
                 options: {
                     map: true,
-                    // remove: false,
+                    remove: false,
                     browsers: ['> 1%', 'last 3 versions', 'ie 9']
                 },
                 src: '../../static/css/style.css'
