@@ -70,13 +70,18 @@ module.exports = function(grunt) {
             }
         },
 
-        autoprefixer: {
-            target: {
-                options: {
-                    map: true,
-                    remove: false,
-                    browsers: ['> 1%', 'last 3 versions', 'ie 9']
-                },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer-core')({
+                        map: true,
+                        remove: false,
+                        browsers: ['> 1%', 'last 3 versions', 'ie 9']
+                    })
+                ]
+            },
+            dist: {
                 src: '../../static/css/style.css'
             }
         },
@@ -109,7 +114,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['../scss/**/*.scss'],
-                tasks: ['sass','autoprefixer','cssmin']
+                tasks: ['sass','postcss','cssmin']
             },
             js:{
                 files: ['../js/**/*.js'],
@@ -123,6 +128,6 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['watch','sass','autoprefixer','cssmin','concat','uglify','codekit','svgmin']);
+    grunt.registerTask('default', ['watch','sass','postcss','cssmin','concat','uglify','codekit','svgmin']);
 
 };
