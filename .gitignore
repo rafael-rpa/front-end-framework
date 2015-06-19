@@ -3,12 +3,12 @@
 # ============================================================================
 
 # --- Grunt/Node installed modules
-_framework/grunt/*
-!_framework/grunt/Gruntfile.js
-!_framework/grunt/package.json
+**/_framework/grunt/*
+!**/_framework/grunt/Gruntfile.js
+!**/_framework/grunt/package.json
 
 # --- Sass file caches
-.sass-cache/
+**/.sass-cache/
 
 # ============================================================================
 #    Python/Django and WordPress
