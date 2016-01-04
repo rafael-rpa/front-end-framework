@@ -20,4 +20,4 @@ P.S.: ```npm install``` command need to be entered only once, in the first time 
 
 ## License ##
 
-Copyright © 2014-2015 Rafael Pillon Almeida. Front-End Framework is a free software licensed under the terms specified in the [LICENSE](https://github.com/rafael-rpa/front-end-framework/blob/master/LICENSE.md) file.
+Copyright © 2014-2016 Rafael Pillon Almeida. Front-End Framework is a free software licensed under the terms specified in the [LICENSE](https://github.com/rafael-rpa/front-end-framework/blob/master/LICENSE.md) file.
