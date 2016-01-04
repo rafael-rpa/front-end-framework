@@ -27,19 +27,31 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-
+    line-height: 1.1;
 }
 
+figure img {
+    max-width: 100%;
+}
 
-a {
-    color: inherit;
-    text-decoration: none;
-    @extend %transitions;
+p{
+    margin: 1em 0;
 
-    &:hover {
-
+    &:first-child {
+        margin-top: 0;
     }
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    @extend %transitions;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
     &:focus {
 
     }

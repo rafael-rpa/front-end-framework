@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // FUNCTIONS
 @import "functions/px-to-em";
 @import "functions/strip-units";
@@ -37,8 +39,9 @@
 
 // LAYOUT
 @import "layout/base";
-@import "layout/body-wrap";
+@import "layout/body-wrapper";
 @import "layout/container";
+@import "layout/components";
 @import "layout/footer";
 @import "layout/form";
 @import "layout/header";
