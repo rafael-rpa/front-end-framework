@@ -18,11 +18,11 @@
 *.pyc
 
 # --- Django settings file
-settings.py
-wsgi.py
+/settings.py
+/wsgi.py
 
 # --- WordPress settings file
-wp-config.php
+/wp-config.php
 
 # ============================================================================
 #    Global Ignore (delete if you already have your global ignore file set)
