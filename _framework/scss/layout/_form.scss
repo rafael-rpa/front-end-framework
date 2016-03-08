@@ -5,34 +5,33 @@
 
 .form {
 
-	legend{
+    legend {
 
 	}
 
-	div{
+    div {
 
-		label{
+        label {
 
 		}
 
-		input{
+        input {
 
-		    &::placeholder {
+            &::placeholder {
 
-		    }
+            }
 
-		    &:hover:not(:disabled) {
+            &:hover:not(:disabled) {
 
-		    }
+            }
 
-		    &:focus:not(:disabled) {
+            &:focus:not(:disabled) {
 
-		    }
+            }
 
-		    &:disabled {
-		        opacity: 0.4;
-		    }
+            &:disabled {
+                opacity: 0.4;
+            }
 		}
-
 	}
 }

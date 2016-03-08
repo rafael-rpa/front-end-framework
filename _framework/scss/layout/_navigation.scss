@@ -5,21 +5,21 @@
 
 .nav {
 
-	.main-menu {
+    .main-menu {
 
-	    li {
+        li {
 
-	        &.active a {
+            &.active a {
 
-	        }
-	    }
+            }
+        }
 
-	    a {
+        a {
 
-	        &:hover,
+            &:hover,
             &:focus {
 
-	        }
-	    }
-	}
+            }
+        }
+    }
 }

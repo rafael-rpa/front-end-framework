@@ -12,10 +12,6 @@ html {
     ::selection {
 
     }
-
-    ::-moz-selection {
-
-    }
 }
 
 
@@ -34,7 +30,7 @@ figure img {
     max-width: 100%;
 }
 
-p{
+p {
     margin: 1em 0;
 
     &:first-child {
