@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     // '../../static/js/main.js':  [
-                    //                                 '../js/helper/util.js',
+                    //                                 '../js/helpers/util.js',
                     //                                 '../js/main.js'
                     //                             ]
                     '../../static/js/main.js': ['../js/main.js']

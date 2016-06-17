@@ -1,9 +1,10 @@
 (function($) {
 
     var settings = {
-        settingA: true,
-        settingB: 123,
-        settingC: "test"
+        settingA : true,
+        settingB : 123,
+        settingC : "test",
+        $settingD: null
     }
 
     var Main = {
