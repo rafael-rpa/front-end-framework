@@ -19,8 +19,8 @@ var Util = (function($) {
         //
         // ========================================================================
 
-        smoothScrolling: function(){
-            $('a[href*=#]:not([href=#])').on('click', function() {
+        smoothScrolling: function() {
+            $('a[href*="#"]:not([href="#"])').on('click', function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -55,7 +55,7 @@ var Util = (function($) {
         //  but if you’d like to disable the execution on the leading edge, pass {leading: false}. To disable execution on the trailing edge, ditto.
         //
         //  Example of usage:
-        //  $(window).on('scroll', Util.throttle(function(){
+        //  $(window).on('scroll', Util.throttle(function() {
         //      //...
         //  }, 200));
         // ========================================================================
@@ -105,7 +105,7 @@ var Util = (function($) {
         //  If immediate is passed, trigger the function on the leading edge, instead of the trailing.
         //
         //  Example of usage:
-        //  $(window).on('resize', Util.debounce(function(){
+        //  $(window).on('resize', Util.debounce(function() {
         //      //...
         //  }, 200));
         // ========================================================================
@@ -154,7 +154,7 @@ var Util = (function($) {
         //
         // ========================================================================
 
-        isOnScreen: function($element, x, y){
+        isOnScreen: function($element, x, y) {
 
             if(x == null || typeof x == 'undefined') x = 1;
             if(y == null || typeof y == 'undefined') y = 1;
@@ -211,24 +211,26 @@ var Util = (function($) {
         //  </form>
         // ========================================================================
 
-        inlineFormLabels: function($element){
+        inlineFormLabels: function($element) {
             $element
-            .on('keydown keyup', function(){
-                if ($(this).val().length == 0){
-                    if($(this).parent().children('label').first().hasClass('hide')){
-                        $(this).parent().children('label').first().removeClass('hide');
-                    }
+            .on('keydown keyup', function() {
+                if ($(this).val().length){
+                    $(this).prev('label').addClass('hide');
                 }else{
-                    if(!$(this).parent().children('label').first().hasClass('hide')){
-                        $(this).parent().children('label').first().addClass('hide');
-                    }
+                    $(this).prev('label').removeClass('hide');
                 }
             })
             .on('focusin', function() {
-                $(this).parent().children('label').first().addClass('focused');
+                $(this).prev('label').addClass('focused');
             })
             .on('focusout', function() {
-                $(this).parent().children('label').first().removeClass('focused');
+                $(this).prev('label').removeClass('focused');
+            });
+
+            $element.each(function() {
+                if ($(this).val().length){
+                    $(this).prev('label').addClass('hide');
+                }
             });
         },
 
