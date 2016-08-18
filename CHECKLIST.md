@@ -1,4 +1,4 @@
-# Front-End Checklist
+# Front-end Checklist
 
 ### Meta
 - [ ] Language attribute <sup>*1</sup>
@@ -7,7 +7,7 @@
 - [ ] Viewport meta tag <sup>*4</sup>
 - [ ] Title
 - [ ] Description and author meta tags <sup>*5</sup>
-- [ ] Favicon, Android icons, iOS icons, etc <sup>*6</sup>
+- [ ] Favicon, Android icons, iOS icons, etc. <sup>*6</sup>
 - [ ] Facebook Open Graph meta tags <sup>*7</sup>
 - [ ] Twitter Cards meta tags <sup>*8</sup>
 
@@ -81,7 +81,7 @@ Note that keywords meta tag is not being used and the reason for this is that Go
 <meta name="author" content="">
 ```
 
-#### <sup>*6</sup> Favicon, Android icons, iOS icons, etc
+#### <sup>*6</sup> Favicon, Android icons, iOS icons, etc.
 In order to easily generate them you can use services like [RealFaviconGenerator](http://realfavicongenerator.net/).
 ```html
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -159,9 +159,9 @@ You can also use aria-labels to provide an invisible label where a visible label
 ```
 
 #### <sup>*10</sup> Server performance and security settings (Gzip compression, Expires headers, Cross-origin requests, etc.)
-If you are using Apache as your webserver feel free to use the [.htaccess](https://github.com/rafael-rpa/front-end-framework/blob/master/.htaccess) from the Front-End Framework or for a more detailed collection of directives refer to [.htaccess Snippets](https://github.com/phanan/htaccess). It is worth remembering that if you have access to the main server config file you should add all directives there instead of in the .htaccess, as using .htaccess files slows down your Apache server.
+If you are using Apache as your webserver feel free to use the [.htaccess](https://github.com/rafael-rpa/front-end-framework/blob/master/.htaccess) from the Front-end Framework or for a more detailed collection of directives refer to [.htaccess Snippets](https://github.com/phanan/htaccess). It is worth remembering that if you have access to the main server config file you should add all directives there instead of in the .htaccess, as using .htaccess files slows down your Apache server.
 
-#### <sup>*11</sup> Set preferred domain (www or non-www).
+#### <sup>*11</sup> Set preferred domain (www or non-www)
 If you would like to go for the Apache .htaccess approach (check footnote #10 for some important considerations) find below both snippets:  
 
 **Redirect to www**

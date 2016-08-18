@@ -1,6 +1,6 @@
-# Front-End Framework
+# Front-end Framework
 
-Front-End Framework is a modular framework developed to be a boilerplate for your web projects. It uses Sass, Kit, and Grunt as task runner.
+Front-end Framework is a modular framework developed to be a boilerplate for your web projects. It uses Sass, Kit, and Grunt as task runner.
 
 
 ## Requirements
@@ -20,4 +20,4 @@ P.S.: ```npm install``` command need to be entered only once, in the first time 
 
 ## License
 
-Copyright © 2014-2016 Rafael Pillon Almeida. Front-End Framework is a free software licensed under the terms specified in the [LICENSE](https://github.com/rafael-rpa/front-end-framework/blob/master/LICENSE.md) file.
+Copyright © 2014-2016 Rafael Pillon Almeida. Front-end Framework is a free software licensed under the terms specified in the [LICENSE](https://github.com/rafael-rpa/front-end-framework/blob/master/LICENSE.md) file.
