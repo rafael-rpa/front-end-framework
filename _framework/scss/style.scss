@@ -2,19 +2,14 @@
 
 // FUNCTIONS
 @import "functions/px-to-em";
-@import "functions/strip-units";
 @import "functions/tint-shade";
 
 // MIXINS
-@import "mixins/elem-reset";
 @import "mixins/ellipsis";
 @import "mixins/font-face";
-@import "mixins/hidpi";
 @import "mixins/icon";
-@import "mixins/image-replace";
-@import "mixins/linear-gradient";
 @import "mixins/media-queries";
-@import "mixins/radial-gradient";
+@import "mixins/property-reset";
 @import "mixins/text-underline";
 @import "mixins/triangle";
 
@@ -26,12 +21,10 @@
 
 // HELPERS
 @import "helpers/clearfix";
-@import "helpers/hidden";
 @import "helpers/hide-text";
 @import "helpers/timing-functions";
 @import "helpers/transitions";
 @import "helpers/visually-hidden";
-@import "helpers/gradient-parser";
 
 // MODULES
 @import "modules/base";

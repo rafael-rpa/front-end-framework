@@ -1,7 +1,6 @@
 // ========================================================================
 //    Title:  Ellipsis
 //    Type:   Mixin
-//    Credit: https://github.com/thoughtbot/bourbon/blob/master/dist/addons/_ellipsis.scss
 // ========================================================================
 
 @mixin ellipsis($display: inline-block, $max-width: 100%) {
@@ -10,4 +9,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    word-wrap: normal;
 }

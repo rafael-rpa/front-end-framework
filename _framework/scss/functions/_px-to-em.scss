@@ -4,9 +4,6 @@
 //    Credit: http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
 // ========================================================================
 
-@function px-to-em($px, $base: $base-font-size) {
-    $px: strip-units($px);
-    $base: strip-units($base);
-
+@function em($px, $base: $base-font-size) {
     @return ($px / $base) * 1em;
 }

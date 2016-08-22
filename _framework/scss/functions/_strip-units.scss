@@ -1,9 +1,0 @@
-// ========================================================================
-//    Title:  Strip units
-//    Type:   Function
-//    Credit: http://stackoverflow.com/a/12335841
-// ========================================================================
-
-@function strip-units($number) {
-    @return $number / ($number * 0 + 1);
-}

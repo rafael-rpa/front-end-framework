@@ -4,9 +4,7 @@
 // ========================================================================
 
 @mixin hide-text {
-    display: inline-block;
     overflow: hidden;
-    text-align: left;
     text-indent: 100%;
     white-space: nowrap;
 }

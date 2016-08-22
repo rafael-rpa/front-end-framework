@@ -1,7 +1,7 @@
 // ========================================================================
 //    Title:  Text Underline
 //    Type:   Mixin
-//    Credit: http://typographyhandbook.com/
+//    Credit: http://typographyhandbook.com/#underlining
 //    Parameters (all colors): background, text, text selection, underline (optional), underline when hovering (optional)
 //    Ex.:    @include text-underline(#fff, #333, #338fff);
 //            @include text-underline(#fff, #333, #338fff, #f20);
@@ -23,7 +23,7 @@
                  -.15em 0 $background;
 }
 
-@mixin text-underline($background, $text, $selection, $underline: $text, $underline-hover: $underline){
+@mixin text-underline($background, $text, $selection, $underline: $text, $underline-hover: $underline) {
     @include text-underline-crop($background);
     color: $text;
     text-decoration: none;
@@ -32,7 +32,7 @@
     background-repeat: repeat-x;
     background-position: 0 95%;
 
-    @if ($underline-hover != $underline){
+    @if ($underline-hover != $underline) {
         &:hover,
         &:focus{
             background-position-x: -95%; // -95% instead of 100% in case pixel values are rounded (-5% due to 210% set above)
