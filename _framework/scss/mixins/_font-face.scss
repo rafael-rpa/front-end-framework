@@ -1,20 +1,30 @@
 // ========================================================================
 //    Title:  Font face
 //    Type:   Mixin
-//    Credit: http://bourbon.io/docs/#font-face
 // ========================================================================
 
-@mixin font-face($family, $file, $weight: normal, $style: normal, $stretch: normal) {
+@mixin font-face($family, $file-path, $weight: normal, $style: normal, $stretch: normal) {
     @font-face {
         font-family:  $family;
+        src: url("#{$file-path}.woff2") format("woff2"),
+             url("#{$file-path}.woff") format("woff");
+        font-stretch: $stretch;
         font-weight:  $weight;
         font-style:   $style;
-        font-stretch: $stretch;
-
-        src: url("#{$file}.eot");
-        src: url("#{$file}.eot#iefix") format("embedded-opentype"),
-             url("#{$file}.woff") format("woff"),
-             url("#{$file}.ttf") format("truetype"),
-             url("#{$file}.svg##{$family}") format("svg");
     }
 }
+
+// Replace code above with the following if you need to support IE8, Opera Mini and older versions of Android.
+// @mixin font-face($family, $file-path, $weight: normal, $style: normal, $stretch: normal) {
+//     @font-face {
+//         font-family:  $family;
+//         src: url("#{$file-path}.eot");
+//         src: url("#{$file-path}.eot#iefix") format("embedded-opentype"),
+//              url("#{$file-path}.woff") format("woff"),
+//              url("#{$file-path}.ttf") format("truetype"),
+//              url("#{$file-path}.svg##{$family}") format("svg");
+//         font-stretch: $stretch;
+//         font-weight:  $weight;
+//         font-style:   $style;
+//     }
+// }
