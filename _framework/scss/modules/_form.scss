@@ -7,19 +7,15 @@
 
     legend {
 
-	}
+    }
 
     div {
 
         label {
 
-		}
+        }
 
-        input {
-
-            &::placeholder {
-
-            }
+        input[type="text"] {
 
             &:hover:not(:disabled) {
 
@@ -30,8 +26,80 @@
             }
 
             &:disabled {
-                opacity: 0.4;
+
             }
-		}
-	}
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            @extend %visually-hidden;
+
+            + label {
+
+                &::before {
+
+                }
+            }
+
+            &:checked + label {
+
+                &::before {
+
+                }
+            }
+        }
+
+        input[type="checkbox"] {
+
+            + label {
+
+                &::before {
+
+                }
+            }
+
+            &:checked + label {
+
+                &::before {
+
+                }
+            }
+        }
+
+        input[type="radio"] {
+
+            + label {
+
+                &::before {
+
+                }
+            }
+
+            &:checked + label {
+
+                &::before {
+
+                }
+            }
+        }
+
+        &.custom-select {
+
+            select {
+                appearance: none;
+
+                &::-ms-expand {
+                    display: none;
+                }
+            }
+
+            &::after {
+                pointer-events: none;
+            }
+        }
+
+        button[type="submit"] {
+
+        }
+    }
 }
