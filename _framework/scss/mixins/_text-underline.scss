@@ -35,7 +35,7 @@
     @if ($underline-hover != $underline) {
         &:hover,
         &:focus{
-            background-position-x: -95%; // -95% instead of 100% in case pixel values are rounded (-5% due to 210% set above)
+            background-position: -95% 95%; // -95% instead of 100% in case pixel values are rounded (-5% due to 210% set above)
         }
     }
 
