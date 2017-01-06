@@ -1,22 +1,31 @@
 {
-    "engines": {
-        "node": ">= 0.10.0"
+    "name": "front-end-framework",
+    "description": "Front-end Framework is a modular framework developed to be a boilerplate for your web projects. It uses Sass, Kit, and Grunt as task runner.",
+    "author": "Rafael Pillon Almeida",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rafael-rpa/front-end-framework.git"
     },
+    "license": "MIT",
+    "private": true,
+    "main": "Gruntfile.js",
     "devDependencies": {
-        "autoprefixer": "^6.3.1",
+        "autoprefixer": "^6.4.1",
         "grunt": "^0.4.5",
         "grunt-codekit": "^1.1.0",
+        "grunt-contrib-clean": "^1.0.0",
         "grunt-contrib-concat": "~1.0.1",
-        "grunt-contrib-cssmin": "^1.0.1",
+        "grunt-contrib-cssmin": "^1.0.2",
         "grunt-contrib-jshint": "~1.0.0",
         "grunt-contrib-qunit": "~1.2.0",
         "grunt-contrib-sass": "^1.0.0",
-        "grunt-contrib-uglify": "~1.0.1",
+        "grunt-contrib-uglify": "~2.0.0",
         "grunt-contrib-watch": "^1.0.0",
+        "grunt-filerev": "^2.3.1",
         "grunt-postcss": "^0.8.0",
-        "grunt-svgmin": "^3.1.2"
-    },
-    "dependencies": {
-        "matchdep": "^1.0.0"
+        "grunt-replace": "^1.0.1",
+        "grunt-svgmin": "^3.3.0",
+        "grunt-usemin": "^3.1.1",
+        "load-grunt-tasks": "^3.5.2"
     }
 }
