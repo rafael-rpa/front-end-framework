@@ -19,14 +19,15 @@
 ### Performance
 - [ ] Concatenate and minify JavaScript and CSS files
 - [ ] Server performance and security settings (Gzip compression, Expires headers, Cross-origin requests, etc.) <sup>*10</sup>
+- [ ] Cache busting <sup>*11</sup>
 - [ ] Optimize images (and SVGs)
 
 ### SEO
-- [ ] Set preferred domain (www or non-www) <sup>*11</sup>
-- [ ] Consistently adopt trailing slash or not <sup>*12</sup>
+- [ ] Set preferred domain (www or non-www) <sup>*12</sup>
+- [ ] Consistently adopt trailing slash or not <sup>*13</sup>
 - [ ] Sitemap
-- [ ] robots.txt <sup>*13</sup>
-- [ ] Schema.org Microdata markup <sup>*14</sup>
+- [ ] robots.txt <sup>*14</sup>
+- [ ] Schema.org Microdata markup <sup>*15</sup>
 - [ ] Google Search Console (Webmaster Tools)
 
 ### General
@@ -161,7 +162,12 @@ You can also use aria-labels to provide an invisible label where a visible label
 #### <sup>*10</sup> Server performance and security settings (Gzip compression, Expires headers, Cross-origin requests, etc.)
 If you are using Apache as your webserver feel free to use the [.htaccess](https://github.com/rafael-rpa/front-end-framework/blob/master/.htaccess) from the Front-end Framework or for a more detailed collection of directives refer to [.htaccess Snippets](https://github.com/phanan/htaccess). It is worth remembering that if you have access to the main server config file you should add all directives there instead of in the .htaccess, as using .htaccess files slows down your Apache server.
 
-#### <sup>*11</sup> Set preferred domain (www or non-www)
+
+#### <sup>*11</sup> Cache busting
+Remember to cache bust your assets, mainly if you are serving them with far-future expires headers. Note that if you do not control versioning with filename-based cache busting you should consider lowering the cache time (e.g. one week).
+
+
+#### <sup>*12</sup> Set preferred domain (www or non-www)
 If you would like to go for the Apache .htaccess approach (check footnote #10 for some important considerations) find below both snippets:  
 
 **Redirect to www**
@@ -185,7 +191,7 @@ If you would like to go for the Apache .htaccess approach (check footnote #10 fo
 </IfModule>
 ```
 
-#### <sup>*12</sup> Consistently adopt trailing slash or not
+#### <sup>*13</sup> Consistently adopt trailing slash or not
 Once again if you have decided to go for the Apache .htaccess solution (check footnote #10 for some important considerations) find below both snippets:
 
 Note that if you already added the ```RewriteEngine on``` you do not need to add again.
@@ -208,7 +214,7 @@ Note that if you already added the ```RewriteEngine on``` you do not need to add
 </IfModule>
 ```
 
-#### <sup>*13</sup> robots.txt
+#### <sup>*14</sup> robots.txt
 Find some examples below and for a more detailed explanation see [robotstxt.org](http://www.robotstxt.org/robotstxt.html).
 
 **Allow all robots complete access**
@@ -222,7 +228,7 @@ User-agent: *
 Disallow: /   
 ```
 
-#### <sup>*14</sup> Schema.org Microdata markup
+#### <sup>*15</sup> Schema.org Microdata markup
 [Schema.org](https://schema.org/docs/gs.html) provides a collection of shared vocabularies that you can use to mark up your pages in order to help search engines and other applications to better understand the content and display it in a useful and relevant way. Find below an example of Microdata usage:
   
 ```html
