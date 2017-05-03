@@ -16,13 +16,16 @@
 # ========================================================================
 
 <IfModule mod_mime.c>
+    AddType application/atom+xml                        atom
     AddType application/json                            json map topojson
     AddType application/ld+json                         jsonld
+    AddType application/rss+xml                         rss
     AddType application/vnd.geo+json                    geojson
-    AddType application/xml                             atom rdf rss xml
+    AddType application/xml                             rdf xml
     AddType application/javascript                      js
+    AddType application/manifest+json                   webmanifest
     AddType application/x-web-app-manifest+json         webapp
-    AddType text/cache-manifest                         appcache manifest
+    AddType text/cache-manifest                         appcache
     AddType audio/mp4                                   f4a f4b m4a
     AddType audio/ogg                                   oga ogg opus
     AddType image/bmp                                   bmp
@@ -64,11 +67,13 @@ AddDefaultCharset utf-8
                      .js \
                      .json \
                      .jsonld \
+                     .manifest \
                      .rdf \
                      .rss \
                      .topojson \
                      .vtt \
                      .webapp \
+                     .webmanifest \
                      .xloc \
                      .xml
 </IfModule>
@@ -182,7 +187,7 @@ FileETag None
     ExpiresByType application/javascript                "access plus 1 year"
     ExpiresByType application/x-javascript              "access plus 1 year"
     ExpiresByType text/javascript                       "access plus 1 year"
-    ExpiresByType application/manifest+json             "access plus 1 year"
+    ExpiresByType application/manifest+json             "access plus 1 week"
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
     ExpiresByType audio/ogg                             "access plus 1 month"
@@ -191,6 +196,7 @@ FileETag None
     ExpiresByType image/jpeg                            "access plus 1 month"
     ExpiresByType image/png                             "access plus 1 month"
     ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
     ExpiresByType video/mp4                             "access plus 1 month"
     ExpiresByType video/ogg                             "access plus 1 month"
     ExpiresByType video/webm                            "access plus 1 month"
