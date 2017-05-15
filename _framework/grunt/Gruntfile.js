@@ -15,10 +15,10 @@ module.exports = function(grunt) {
         },
 
         sass: {
+            options: {
+                style: 'expanded'
+            },
             target: {
-                options: {
-                    style: 'expanded'
-                },
                 files: {
                     '<%= paths.assets %>css/style.css' : ['<%= paths.framework %>scss/style.scss']
                 }
@@ -26,10 +26,10 @@ module.exports = function(grunt) {
         },
 
         cssmin: {
+            options: {
+                keepSpecialComments: 0
+            },
             target: {
-                options: {
-                    keepSpecialComments: 0
-                },
                 // files: {
                 //     '<%= paths.assets %>css/style.min.css': ['<%= paths.assets %>css/style.css']
                 // }
@@ -50,20 +50,20 @@ module.exports = function(grunt) {
                     require('autoprefixer')({
                         map: true,
                         remove: false,
-                        browsers: ['> 1%', 'last 3 versions', 'ie 9']
+                        browsers: ['> 1%', 'last 3 versions', 'ie 11']
                     })
                 ]
             },
-            dist: {
+            target: {
                 src: '<%= paths.assets %>css/style.css'
             }
         },
 
         concat: {
+            options: {
+                separator: ';'
+            },
             target: {
-                options: {
-                    separator: ';'
-                },
                 files: {
                     // '<%= paths.assets %>js/main.js':  [
                     //                                 '<%= paths.framework %>js/helpers/util.js',
@@ -75,10 +75,10 @@ module.exports = function(grunt) {
         },
 
         uglify: {
+            // options: {
+            //     mangle: false
+            // },
             target: {
-                // options: {
-                //     mangle: false
-                // },
                 files: {
                     '<%= paths.assets %>js/main.min.js': ['<%= paths.assets %>js/main.js']
                 }
@@ -86,10 +86,10 @@ module.exports = function(grunt) {
         },
 
         codekit: {
+            options : {
+                compilePrefixed : false
+            },
             target : {
-                options : {
-                    compilePrefixed : false
-                },
                 files : {
                     '<%= paths.kitTemplatesDest %>' : ['<%= paths.framework %>kit/**/*.kit']
                 }
@@ -131,9 +131,11 @@ module.exports = function(grunt) {
         },
 
         replace: {
+            options: {
+                usePrefix: false
+            },
             css: {
                 options: {
-                    usePrefix: false,
                     patterns: [{
                         match: /(style.min(.[a-fA-F0-9]+)?\.css)/g,
                         replacement: 'style.min.css'
@@ -149,7 +151,6 @@ module.exports = function(grunt) {
             },
             js: {
                 options: {
-                    usePrefix: false,
                     patterns: [{
                         match: /(main.min(.[a-fA-F0-9]+)?\.js)/g,
                         replacement: 'main.min.js'
@@ -165,7 +166,6 @@ module.exports = function(grunt) {
             },
             iconFont: {
                 options: {
-                    usePrefix: false,
                     patterns: [{
                         match: /(icons(.[a-fA-F0-9]+)?\.)/g,
                         replacement: 'icons.'
@@ -181,8 +181,6 @@ module.exports = function(grunt) {
         },
 
         usemin: {
-            html: ['<%= paths.cacheBustingSrc %>*.html'],
-            css: ['../../static/css/style.min*.css'],
             options: {
                 assetsDirs: ['<%= paths.assets %>css', '<%= paths.assets %>js', '../../static/fonts'],
                 patterns: {
@@ -194,6 +192,41 @@ module.exports = function(grunt) {
                         [/(icons(.[a-fA-F0-9]+)?\.(eot|otf|svg|ttf|woff2?))/g, 'Replacing reference to icons.* with the revved version']
                     ]
                 }
+            },
+            html: ['<%= paths.cacheBustingSrc %>*.html'],
+            css: ['../../static/css/style.min*.css']
+        },
+
+        imagemin: {
+            webpPNG: {
+                options: {
+                    use: [
+                        require('imagemin-webp')({
+                            lossless: true
+                        })
+                    ]
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= paths.assets %>images/',
+                    src: ['**/*.png'],
+                    dest: '<%= paths.assets %>images/'
+                }]
+            },
+            webpJPG: {
+                options: {
+                    use: [
+                        require('imagemin-webp')({
+                            quality: 65
+                        })
+                    ]
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= paths.assets %>images/',
+                    src: ['**/*.jpg'],
+                    dest: '<%= paths.assets %>images/'
+                }]
             }
         },
 
@@ -232,6 +265,10 @@ module.exports = function(grunt) {
                 files: ['../../static/fonts/icons.{eot,otf,svg,ttf,woff,woff2}'],
                 tasks: ['clean:iconFont','replace:iconFont','filerev:iconFont','clean:css','replace:css','usemin:css','filerev:css','usemin:html']
             },
+            webp:{
+                files: ['<%= paths.assets %>images/**/*.{png,jpg}'],
+                tasks: ['imagemin']
+            },
             svg:{
                 files: ['<%= paths.root %>_assets/svg/original/**/*.svg'],
                 tasks: ['svgmin']
@@ -240,6 +277,6 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', 'watch');
 
 };
