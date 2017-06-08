@@ -1,0 +1,14 @@
+// ========================================================================
+//    Title:  Full width (in limited width parents)
+//    Type:   Helper
+// ========================================================================
+
+@mixin full-width {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+%full-width {
+    @include full-width;
+}
