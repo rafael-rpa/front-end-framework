@@ -174,15 +174,15 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['../../static/css/style.min*.css'],
-                    dest: '../../static/css/'
+                    src: ['<%= paths.assets %>css/style.min*.css'],
+                    dest: '<%= paths.assets %>css/'
                 }]
             }
         },
 
         usemin: {
             options: {
-                assetsDirs: ['<%= paths.assets %>css', '<%= paths.assets %>js', '../../static/fonts'],
+                assetsDirs: ['<%= paths.assets %>css', '<%= paths.assets %>js', '<%= paths.assets %>fonts'],
                 patterns: {
                     html: [
                         [/(style.min(.[a-fA-F0-9]+)?\.css)/g, 'Replacing reference to style.min.css with the revved version'],
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
                 }
             },
             html: ['<%= paths.cacheBustingSrc %>*.html'],
-            css: ['../../static/css/style.min*.css']
+            css: ['<%= paths.assets %>css/style.min*.css']
         },
 
         imagemin: {
@@ -262,7 +262,7 @@ module.exports = function(grunt) {
                 tasks: ['clean:js','replace:js','concat','uglify','filerev:js','usemin:html']
             },
             iconFont:{
-                files: ['../../static/fonts/icons.{eot,otf,svg,ttf,woff,woff2}'],
+                files: ['<%= paths.assets %>fonts/icons.{eot,otf,svg,ttf,woff,woff2}'],
                 tasks: ['clean:iconFont','replace:iconFont','filerev:iconFont','clean:css','replace:css','usemin:css','filerev:css','usemin:html']
             },
             webp:{
