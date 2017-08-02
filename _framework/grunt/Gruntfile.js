@@ -240,11 +240,28 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: '<%= paths.root %>_assets/svg/original',
+                    cwd: '<%= paths.root %>_assets/svg/optimize/src',
                     src: ['**/*.svg'],
-                    dest: '<%= paths.root %>_assets/svg/compressed'
+                    dest: '<%= paths.root %>_assets/svg/optimize/dist'
                 }]
             }
+        },
+
+        svgstore: {
+            options: {
+                prefix : 'icon-',
+                // svg: {
+                //     style: 'display: none;'
+                // },
+                formatting : {
+                    indent_size : 4
+                }
+            },
+            target: {
+                files: {
+                    '<%= paths.assets %>images/sprite.svg': ['<%= paths.root %>_assets/svg/sprite/*.svg'],
+                },
+            },
         },
 
         //In order to not cache bust your assets delete every clean, replace, usemin and filerev tasks below.
@@ -257,21 +274,25 @@ module.exports = function(grunt) {
                 files: ['<%= paths.framework %>scss/**/*.scss'],
                 tasks: ['clean:css','replace:css','sass','postcss','cssmin','usemin:css','filerev:css','usemin:html']
             },
-            js:{
+            js: {
                 files: ['<%= paths.framework %>js/**/*.js'],
                 tasks: ['clean:js','replace:js','concat','uglify','filerev:js','usemin:html']
             },
-            iconFont:{
+            iconFont: {
                 files: ['<%= paths.assets %>fonts/icons.{eot,otf,svg,ttf,woff,woff2}'],
                 tasks: ['clean:iconFont','replace:iconFont','filerev:iconFont','clean:css','replace:css','usemin:css','filerev:css','usemin:html']
             },
-            webp:{
+            webp: {
                 files: ['<%= paths.assets %>images/**/*.{png,jpg}'],
                 tasks: ['imagemin']
             },
-            svg:{
-                files: ['<%= paths.root %>_assets/svg/original/**/*.svg'],
+            svgo: {
+                files: ['<%= paths.root %>_assets/svg/optimize/src/**/*.svg'],
                 tasks: ['svgmin']
+            },
+            svgsprite: {
+                files: ['<%= paths.root %>_assets/svg/sprite/**/*.svg'],
+                tasks: ['svgstore']
             }
         }
 
